@@ -7,7 +7,7 @@ function Compitition() {
   let [competitions, setCompetitions] = useState([]);
   let [loading, setLoading] = useState(true);
   // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  const proxyUrl = "https://thingproxy.freeboard.io/fetch/";
+  const proxyUrl = "https://livescores-mo.netlify.app/";
   const url =
     `${proxyUrl}https://api.football-data.org/v4/competitions`;
   useEffect(() => {

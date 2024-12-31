@@ -10,7 +10,7 @@ function TeamDetails() {
   const [squad, setSquad] = useState([]);
   const [active, setActive] = useState("Info");
   // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  const proxyUrl = "https://thingproxy.freeboard.io/fetch/";
+  const proxyUrl = "https://livescores-mo.netlify.app/";
   const url = `http://api.football-data.org/v4/teams/${teamId}`;
   console.log(teamId);
   useEffect(() => {

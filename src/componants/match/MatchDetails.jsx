@@ -8,7 +8,7 @@ function MatchDetails() {
   const [matches, setMatches] = useState([]);
   const [active, setActive] = useState("info");
   const url = `https://api.football-data.org/v4/matches/${matchId}`;
-  const proxyUrl = "https://thingproxy.freeboard.io/fetch/";
+  const proxyUrl = "https://livescores-mo.netlify.app/";
   // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
   useEffect(() => {
     fetch(`${proxyUrl}${url}`, {

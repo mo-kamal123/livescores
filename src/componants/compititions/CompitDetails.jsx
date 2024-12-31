@@ -16,7 +16,7 @@ function CompitDetails() {
   const compitUrl = `http://api.football-data.org/v4/competitions/${compitId}/standings`;
   const roundUrl = `http://api.football-data.org/v4/competitions/${compitId}/matches?matchday=${currRound}`;
   // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  const proxyUrl = "https://thingproxy.freeboard.io/fetch/";
+  const proxyUrl = "https://livescores-mo.netlify.app/";
 
   useEffect(() => {
     fetch(`${proxyUrl}${compitUrl}`, {
