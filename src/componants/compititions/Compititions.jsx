@@ -6,14 +6,21 @@ import Nav from "../Nav";
 function Compitition() {
   let [competitions, setCompetitions] = useState([]);
   let [loading, setLoading] = useState(true);
-  // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  const proxyUrl = "https://livescores-mo.netlify.app/";
-  const url =
-    `${proxyUrl}https://api.football-data.org/v4/competitions`;
+  // const proxyUrl = 'http://alloworigin.com/get?url='
+  // const proxyUrl = "https://livescores-mo.netlify.app/.netlify/functions/cors-proxy?url=";
+  const proxyUrl = "https://thingproxy.freeboard.io/fetch/";
+  const url = `https://api.football-data.org/v4/competitions`;
   useEffect(() => {
-    fetch(`${url}`, {
+    fetch(`${proxyUrl}${encodeURIComponent(url)}`, {
       method: "GET",
-      headers: { "X-Auth-Token": "8955705d5dba4ec8b3d12f78738ae026" },
+//       Access-Control-Allow-Origin = '*',
+// Access-Control-Allow-Headers =  'Content-Type',
+// Access-Control-Allow-Methods = 'GET, POST, PUT, DELETE',
+      headers: {
+        "X-Auth-Token": "8955705d5dba4ec8b3d12f78738ae026",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin":'*'
+      },
     })
       .then((res) => {
         if (!res.ok) {
@@ -62,13 +69,18 @@ function Compitition() {
     );
   } else {
     return (
-      <div className="mx-auto max-w-[1000px] h-screen flex items-center justify-center p-9 relative z-10">
-        <Spinner
-          color="failure"
-          aria-label="Failure spinner example"
-          size="xl"
-        />
-      </div>
+      <>
+        <div>
+          <Nav />
+        </div>
+        <div className="mx-auto max-w-[1000px] h-screen flex items-center justify-center p-9 relative z-10">
+          <Spinner
+            color="failure"
+            aria-label="Failure spinner example"
+            size="xl"
+          />
+        </div>
+      </>
     );
   }
 }

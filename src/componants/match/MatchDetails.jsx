@@ -8,10 +8,10 @@ function MatchDetails() {
   const [matches, setMatches] = useState([]);
   const [active, setActive] = useState("info");
   const url = `https://api.football-data.org/v4/matches/${matchId}`;
-  const proxyUrl = "https://livescores-mo.netlify.app/";
-  // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  // const proxyUrl = "https://livescores-mo.netlify.app/.netlify/functions/cors-proxy?url=";
+  const proxyUrl = "https://thingproxy.freeboard.io/fetch/";
   useEffect(() => {
-    fetch(`${proxyUrl}${url}`, {
+    fetch(`${proxyUrl}${encodeURIComponent(url)}`, {
       method: "GET",
       headers: { "X-Auth-Token": "8955705d5dba4ec8b3d12f78738ae026" },
     })

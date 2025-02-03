@@ -16,10 +16,11 @@ function CompitDetails() {
   const compitUrl = `http://api.football-data.org/v4/competitions/${compitId}/standings`;
   const roundUrl = `http://api.football-data.org/v4/competitions/${compitId}/matches?matchday=${currRound}`;
   // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  const proxyUrl = "https://livescores-mo.netlify.app/";
+  // const proxyUrl = "https://livescores-mo.netlify.app/.netlify/functions/cors-proxy?url=";
+  const proxyUrl = "https://thingproxy.freeboard.io/fetch/";
 
   useEffect(() => {
-    fetch(`${proxyUrl}${compitUrl}`, {
+    fetch(`${proxyUrl}${encodeURIComponent(compitUrl)}`, {
       method: "GET",
       headers: { "X-Auth-Token": "8955705d5dba4ec8b3d12f78738ae026" },
     })
