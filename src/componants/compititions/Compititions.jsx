@@ -8,10 +8,11 @@ function Compitition() {
   let [loading, setLoading] = useState(true);
   // const proxyUrl = 'http://alloworigin.com/get?url='
   // const proxyUrl = "https://livescores-mo.netlify.app/.netlify/functions/cors-proxy?url=";
-  const proxyUrl = "https://thingproxy.freeboard.io/fetch/";
+  // const proxyUrl = "https://thingproxy.freeboard.io/fe tch/";
   const url = `https://api.football-data.org/v4/competitions`;
+  
   useEffect(() => {
-    fetch(`${proxyUrl}${encodeURIComponent(url)}`, {
+    fetch(`${proxyUrl}${url}`, {
       method: "GET",
 //       Access-Control-Allow-Origin = '*',
 // Access-Control-Allow-Headers =  'Content-Type',
